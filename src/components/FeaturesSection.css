@@ -1,0 +1,35 @@
+.features {
+  width:100%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background: #3a190b;
+  }
+  .sectionTitle {
+    color: white;
+    font-size: 2rem;
+  }
+  .featureList{
+    display: flex;
+    justify-content: space-around;
+  }
+  .featureItem{
+    width: 30%;
+    padding: 15px;
+    color:white;
+    background-color: hsl(0deg 0% 100% / 3%);
+    text-align: center;
+    p{
+      color: white;
+    }
+  }
+  .featureItem:hover{
+    transform: scale(1.1);
+    background-color: #ff6a0038;
+  }
+  .FeatureItemLink{ 
+    display: contents;
+    text-decoration: none;
+  }
