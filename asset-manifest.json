@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Alibaba-Clone-Website/static/css/main.04469e10.css",
+    "main.js": "/Alibaba-Clone-Website/static/js/main.97f36ab1.js",
+    "static/js/453.70334942.chunk.js": "/Alibaba-Clone-Website/static/js/453.70334942.chunk.js",
+    "static/media/Hero.avif": "/Alibaba-Clone-Website/static/media/Hero.fcf7e5d30d193455ac9c.avif",
+    "index.html": "/Alibaba-Clone-Website/index.html",
+    "main.04469e10.css.map": "/Alibaba-Clone-Website/static/css/main.04469e10.css.map",
+    "main.97f36ab1.js.map": "/Alibaba-Clone-Website/static/js/main.97f36ab1.js.map",
+    "453.70334942.chunk.js.map": "/Alibaba-Clone-Website/static/js/453.70334942.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.04469e10.css",
+    "static/js/main.97f36ab1.js"
+  ]
+}
