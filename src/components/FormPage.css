@@ -70,3 +70,52 @@ body {
 .btn-submit:hover {
     background-color: #e55a00;
 }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        margin: 30px auto;
+        padding: 15px;
+    }
+
+    .form-header h1 {
+        font-size: 22px;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .btn-submit {
+        font-size: 16px;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+        margin: 20px auto;
+        padding: 10px;
+    }
+
+    .form-header h1 {
+        font-size: 20px;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    .btn-submit {
+        font-size: 14px;
+        padding: 6px;
+    }
+}

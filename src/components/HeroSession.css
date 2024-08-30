@@ -1,40 +1,89 @@
-*{
+* {
   margin: 0;
   padding: 0;
 }
+
 .hero {
-    width: 100%;
-    height: 515px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-image: url("../assets/Hero.avif");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-color: #61dafb;
-  
+  width: 100%;
+  height: 515px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../assets/Hero.avif");
+  background-size: cover; /* Ensure the image covers the entire area */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat;
+  background-color: #61dafb;
+}
+
+/* Base Styles */
+.heroTitle {
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.heroText {
+  color: white;
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+}
+
+.heroButton {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #ff6a00;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .hero {
+    height: 400px;
+    background-size: cover; /* Ensure the image scales down properly */
+    background-position: center; /* Center the image */
   }
-  
+
   .heroTitle {
-    color: white;
-    font-size: 2.5rem;
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+
+  .heroText {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+
+  .heroButton {
+    font-size: 0.9rem;
+    padding: 8px 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: 300px;
+    background-size: cover; /* Ensure the image scales down properly */
+    background-position: center; /* Center the image */
+  }
+
+  .heroTitle {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+
+  .heroText {
+    font-size: 0.9rem;
     margin-bottom: 20px;
   }
-  
-  .heroText {
-    color: white;
-    font-size: 1.2rem;
-    margin-bottom: 40px;
-  }
-  
+
   .heroButton {
-    padding: 10px 20px;
-    font-size: 1rem;
-    background-color: #ff6a00;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
+    font-size: 0.8rem;
+    padding: 6px 16px;
   }
+}

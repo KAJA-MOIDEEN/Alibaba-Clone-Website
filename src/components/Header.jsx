@@ -7,7 +7,7 @@ let {name} = props;
   return (
     <>
       {/* Header */}
-      <header className='header dark:bg-slate-800  '>
+      <header className='header   '>
         <img src={logo} alt="" />
         <h4>Hii {name}</h4>
         <nav className='nav'>

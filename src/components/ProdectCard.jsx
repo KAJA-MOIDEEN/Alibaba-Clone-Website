@@ -8,8 +8,8 @@ const ProductCard = () => {
     const [ElectronicProdect,setElectronic] = useState([])
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-  console.log("Count")
     const fetchProduct = async () => {
+  
       try {
         const res = await fetch('https://fakestoreapi.com/products/');
         if (!res.ok) {
@@ -17,9 +17,10 @@ const ProductCard = () => {
         }
         const json = await res.json();
 
-        let MensProdect = json?.filter(data=>data.category === "men's clothing");
-        let womensProdect = json?.filter(data=>data.category === "women's clothing");
-        let ElectronicProdect = json?.filter(data=>data.category === "electronics");
+        let MensProdect = json?.filter(data => data.category === "men's clothing");
+        let womensProdect = json?.filter(data => data.category === "women's clothing");
+        let ElectronicProdect = json?.filter(data => data.category === "electronics");
+
         setElectronic(ElectronicProdect)
         setProductMen(MensProdect);
         setProductWomen(womensProdect);
