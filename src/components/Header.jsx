@@ -9,7 +9,7 @@ let {name} = props;
       {/* Header */}
       <header className='header'>
         <img src={logo} alt="" />
-        <h4>Hii {name}</h4>
+        
         <nav className='nav'>
           <Link to={'/'} className='navLink'>Home</Link>
           <Link to='#' className='navLink'>Features</Link>

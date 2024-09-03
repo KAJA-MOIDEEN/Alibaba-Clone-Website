@@ -4,7 +4,7 @@ import './FormPage.css';
 const FormPage = () => {
 
     const initialvalue = {
-        "name" : "",
+        "fullName" : "",
         "email" : "",
         "phone" : "",
         "company" : "",
@@ -25,6 +25,10 @@ const FormPage = () => {
         e.preventDefault();
     }
     
+    const handelReset = async(e) =>{
+        SetData(initialvalue)
+    }
+    
     return (
         <div className="container">
             <header className="form-header">
@@ -32,13 +36,13 @@ const FormPage = () => {
             </header>
 
             <main className="main-form-content">
-                <form className="form" onSubmit={handelSubmit}>
+                <form className="form" onSubmit={handelSubmit} onReset={handelReset}>
                     <div className="form-group">
                         <label htmlFor="name">Full Name</label>
                         <input type="text"
                         id="name"
-                        name="name"
-                        value={getData.name}
+                        name="fullName"
+                        value={getData.fullName}
                         placeholder="Enter your full name"
                         onChange={handleChange}
                          required />
@@ -100,9 +104,13 @@ const FormPage = () => {
                             <option value="germany">Germany</option>
                         </select>
                     </div>
-
+                    <div className='form-btn'>
                     <div className="form-group">
                         <button type="submit" className="btn-submit">Submit</button>
+                    </div>
+                    <div className="form-group">
+                        <button type="reset" className="btn-submit">Reset</button>
+                    </div>
                     </div>
                 </form>
             </main>
