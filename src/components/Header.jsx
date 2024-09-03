@@ -7,7 +7,7 @@ let {name} = props;
   return (
     <>
       {/* Header */}
-      <header className='header   '>
+      <header className='header'>
         <img src={logo} alt="" />
         <h4>Hii {name}</h4>
         <nav className='nav'>
@@ -16,6 +16,7 @@ let {name} = props;
           <Link to="/about" className='navLink'>About</Link>
           <Link to="/form" className='navLink'>Contact</Link>
         </nav>
+        <Link to="/signup" ><button className='header-btn'>SignUp</button></Link>
       </header>
       </>
       )};

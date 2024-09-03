@@ -8,7 +8,9 @@ import ProductCard from './components/ProdectCard';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import FormPage from './components/FormPage';
-
+import SignUp from './Pages/LoginPage/LoginPage';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function App() {
   return (
     <Router>
@@ -21,7 +23,9 @@ function App() {
         <Route path="*" element={<NotFoundPage />} /> {/* For handling 404 errors */}
         <Route path="/form" element={ <FormPage />} /> { /* Form page*/}
         <Route path="/about" element={ <AboutPage />} /> { /* About page*/}
+        <Route path='/signup' element={<SignUp/>} />
       </Routes>
+      <ToastContainer />
       <Footer/>
     </Router>
   );

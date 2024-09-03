@@ -21,8 +21,8 @@ const FormPage = () => {
   
     console.log("grtDaTA", getData)
 
-    const handelSubmit = () =>{
-
+    const handelSubmit = async(e) =>{
+        e.preventDefault();
     }
     
     return (
@@ -32,7 +32,7 @@ const FormPage = () => {
             </header>
 
             <main className="main-form-content">
-                <form className="form">
+                <form className="form" onSubmit={handelSubmit}>
                     <div className="form-group">
                         <label htmlFor="name">Full Name</label>
                         <input type="text"
