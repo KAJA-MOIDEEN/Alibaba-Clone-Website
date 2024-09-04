@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './FormPage.css';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 
 const FormPage = () => {
@@ -22,7 +23,7 @@ const FormPage = () => {
     }
   
     console.log("getDaTA", formData)
-
+    const navigate = useNavigate();
     const handelSubmit = async(e) =>{
         e.preventDefault();
 
@@ -31,7 +32,11 @@ const FormPage = () => {
             if(res.data){
                 SetData(initialvalue)
                 toast.success(res.data.message)
+                setTimeout(() => {
+                    navigate('/details');
+                }, 2000);   
             }
+            
             
         })
         .catch((err)=>{
