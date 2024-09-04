@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import './FormPage.css';
+import axios from 'axios';
+import { toast } from 'react-toastify';
+
 
 const FormPage = () => {
 
@@ -11,28 +14,39 @@ const FormPage = () => {
         "message" : "",
         "country" : "",
     }
-    const [getData,SetData] = useState(initialvalue);
+    const [formData,SetData] = useState(initialvalue);
     
     const handleChange = (e)=>{
-
         const { name , value} = e.target
-        SetData({...getData, [name]:value})
+        SetData({...formData, [name]:value})
     }
   
-    console.log("grtDaTA", getData)
+    console.log("getDaTA", formData)
 
     const handelSubmit = async(e) =>{
         e.preventDefault();
+
+        await axios.post("http://localhost:5000/v1/form",formData)
+        .then((res)=>{
+            if(res.data){
+                SetData(initialvalue)
+                toast.success(res.data.message)
+            }
+            
+        })
+        .catch((err)=>{
+              console.log(err);
+        })
     }
-    
+
     const handelReset = async(e) =>{
         SetData(initialvalue)
     }
     
     return (
-        <div className="container">
+        <div className="container flex-wrap">
             <header className="form-header">
-                <h1>Alibaba Form Page</h1>
+                <h1 className='' >Contact Us</h1>
             </header>
 
             <main className="main-form-content">
@@ -42,7 +56,7 @@ const FormPage = () => {
                         <input type="text"
                         id="name"
                         name="fullName"
-                        value={getData.fullName}
+                        value={formData.fullName}
                         placeholder="Enter your full name"
                         onChange={handleChange}
                          required />
@@ -53,7 +67,7 @@ const FormPage = () => {
                         <input type="email"
                          id="email" 
                          name="email"
-                         value={getData.email} 
+                         value={formData.email} 
                          placeholder="Enter your email address"
                          onChange={handleChange} 
                          required />
@@ -64,7 +78,7 @@ const FormPage = () => {
                         <input type="tel" 
                         id="phone" 
                         name="phone"
-                        value={getData.phone} 
+                        value={formData.phone} 
                         placeholder="Enter your phone number"
                         onChange={handleChange} 
                         required />
@@ -75,7 +89,7 @@ const FormPage = () => {
                         <input type="text" 
                         id="company" 
                         name="company"
-                        value={getData.company} 
+                        value={formData.company} 
                         placeholder="Enter your company name"
                         onChange={handleChange} 
                         required />
@@ -86,7 +100,7 @@ const FormPage = () => {
                     <textarea 
                         id="message" 
                         name="message"
-                        value={getData.message} 
+                        value={formData.message} 
                         placeholder="Enter your message"
                         onChange={handleChange} 
                         rows="5" 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import './LoginPage.css';
+import './SignUpPage.css';
 import { toast } from 'react-toastify';
 
 const SignUp = () => {
@@ -13,13 +13,11 @@ const SignUp = () => {
     });
 
     const [message, setMessage] = useState('');
-
+    console.log(message);
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setFormData({
-            ...formData,
-            [name]: value
-        });
+        
+        setFormData({...formData,[name]: value});
     };
 
     const handleSubmit = async (e) => {
@@ -32,7 +30,7 @@ const SignUp = () => {
             return;
         }
 
-        await axios.post('http://localhost:8000/v1/register',formData).then((res)=>console.log(res.data));
+        await axios.post('http://localhost:5000/v1/register',formData).then((res)=>console.log(res.data));
         toast('user created');
         } catch (error) {
             toast.error(error.response.data.message);
@@ -72,7 +70,7 @@ const SignUp = () => {
                     <div className="inputGroup">
                         <label htmlFor="phone" className="label">Phone:</label>
                         <input
-                            type="number"
+                            type="string"
                             name="phone"
                             value={formData.phone}
                             onChange={handleChange}

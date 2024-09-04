@@ -8,9 +8,10 @@ import ProductCard from './components/ProdectCard';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import FormPage from './components/FormPage';
-import SignUp from './Pages/LoginPage/LoginPage';
+import SignUp from './Pages/LoginPage/SignUpPage';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import FormDetails from './admin_pages/formDetails';
 function App() {
   return (
     <Router>
@@ -24,6 +25,7 @@ function App() {
         <Route path="/form" element={ <FormPage />} /> { /* Form page*/}
         <Route path="/about" element={ <AboutPage />} /> { /* About page*/}
         <Route path='/signup' element={<SignUp/>} />
+        <Route path="/details" element={<FormDetails/>} />
       </Routes>
       <ToastContainer />
       <Footer/>

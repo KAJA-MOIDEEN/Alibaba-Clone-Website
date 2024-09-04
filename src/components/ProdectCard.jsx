@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 const ProductCard = () => {
     const [productsMen, setProductMen] = useState([])
     const [productsWomen, setProductWomen] = useState([])
-    const [ElectronicProdect,setElectronic] = useState([])
+    const [ElectronicProduct,setElectronic] = useState([])
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const fetchProduct = async () => {
@@ -17,13 +17,13 @@ const ProductCard = () => {
         }
         const json = await res.json();
 
-        let MensProdect = json?.filter(data => data.category === "men's clothing");
-        let womensProdect = json?.filter(data => data.category === "women's clothing");
-        let ElectronicProdect = json?.filter(data => data.category === "electronics");
+        let MensProduct = json?.filter(data => data.category === "men's clothing");
+        let womenProduct = json?.filter(data => data.category === "women's clothing");
+        let ElectronicProduct = json?.filter(data => data.category === "electronics");
 
-        setElectronic(ElectronicProdect)
-        setProductMen(MensProdect);
-        setProductWomen(womensProdect);
+        setElectronic(ElectronicProduct)
+        setProductMen(MensProduct);
+        setProductWomen(womenProduct);
 
       } catch (error) {
         setError(error.message);
@@ -79,12 +79,12 @@ const ProductCard = () => {
           ))
         }
       </div>
-      <h2>Electronics: ({ElectronicProdect.length}products available)</h2>
+      <h2>Electronics: ({ElectronicProduct.length}products available)</h2>
       <div className='prodectSection' data-aos="fade-right"
        data-aos-offset="300"
        data-aos-easing="ease-in-sine">
         {
-          ElectronicProdect.map((product) => (
+          ElectronicProduct.map((product) => (
             <div className="card" >
             <img src={product.image} alt={product.title} className="cardImage" />
             <div className="cardBody">
