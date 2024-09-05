@@ -17,7 +17,7 @@ function App() {
     <Router>
       <Header name = "KAJA"/>
       <Routes>
-        <Route path="/" element={<HomePage />} >
+        <Route path="/Alibaba-Clone-Website" element={<HomePage />} >
          <Route path='/shop' element={<ProductCard/>}/> 
          <Route path='/website' element={<h1>Website</h1>}/> 
         </Route>
