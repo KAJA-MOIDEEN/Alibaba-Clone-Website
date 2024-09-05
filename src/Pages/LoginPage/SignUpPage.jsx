@@ -30,7 +30,7 @@ const SignUp = () => {
             return;
         }
 
-        await axios.post('http://localhost:5000/v1/register',formData).then((res)=>console.log(res.data));
+        await axios.post('https://appsail-50022145562.development.catalystappsail.in/v1/register',formData).then((res)=>console.log(res.data));
         toast('user created');
         } catch (error) {
             toast.error(error.response.data.message);

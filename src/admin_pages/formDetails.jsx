@@ -18,7 +18,7 @@ const FormDetails = () => {
     const getFormDetails = async () => {
       setLoading(true);
       try {
-        const res = await axios.get("http://localhost:5000/v1/form");
+        const res = await axios.get("https://appsail-50022145562.development.catalystappsail.in/v1/form");
         setUserDetails(res.data.formDetails);
       } catch (error) {
         console.error(error);
@@ -35,7 +35,7 @@ const FormDetails = () => {
 
   const handleView = async (_id) => {
     try {
-      const res = await axios.get(`http://localhost:5000/v1/form?_Id=${_id}`);
+      const res = await axios.get(`https://appsail-50022145562.development.catalystappsail.in/v1/form?_Id=${_id}`);
       setViewDetails(res.data.findDetails);
       setTimeout(() => {
         setButtonPop(true);  

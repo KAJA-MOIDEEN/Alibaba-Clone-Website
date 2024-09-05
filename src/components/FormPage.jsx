@@ -27,7 +27,7 @@ const FormPage = () => {
     const handelSubmit = async(e) =>{
         e.preventDefault();
 
-        await axios.post("http://localhost:5000/v1/form",formData)
+        await axios.post("https://appsail-50022145562.development.catalystappsail.in/v1/form",formData)
         .then((res)=>{
             if(res.data){
                 SetData(initialvalue)
