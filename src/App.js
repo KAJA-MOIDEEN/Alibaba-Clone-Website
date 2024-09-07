@@ -12,12 +12,13 @@ import SignUp from './Pages/LoginPage/SignUpPage';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import FormDetails from './admin_pages/formDetails';
+import Sample from './components/sample';
 function App() {
   return (
     <Router>
       <Header name = "KAJA"/>
       <Routes>
-        <Route path="/Alibaba-Clone-Website" element={<HomePage />} >
+        <Route path='/' element={<HomePage />} >
          <Route path='/shop' element={<ProductCard/>}/> 
          <Route path='/website' element={<h1>Website</h1>}/> 
         </Route>
@@ -26,6 +27,7 @@ function App() {
         <Route path="/about" element={ <AboutPage />} /> { /* About page*/}
         <Route path='/signup' element={<SignUp/>} />
         <Route path="/details" element={<FormDetails/>} />
+        <Route path="/sample" element={<Sample/>} /> 
       </Routes>
       <ToastContainer />
       <Footer/>

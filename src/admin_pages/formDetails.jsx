@@ -18,7 +18,7 @@ const FormDetails = () => {
     const getFormDetails = async () => {
       setLoading(true);
       try {
-        const res = await axios.get("https://appsail-50022145562.development.catalystappsail.in/v1/form");
+        const res = await axios.get("https://appsail-50022145562.development.catalystappsail.in/v1/form" || "");
         setUserDetails(res.data.formDetails);
       } catch (error) {
         console.error(error);
@@ -39,7 +39,7 @@ const FormDetails = () => {
       setViewDetails(res.data.findDetails);
       setTimeout(() => {
         setButtonPop(true);  
-      }, 100);
+      }, 1);
     } catch (err) {
       console.log(err);
     }
@@ -53,7 +53,7 @@ const FormDetails = () => {
     <div className="w-full min-h-screen flex flex-col justify-evenly items-center relative " >
       {buttonPop && (
         <div className="modal-overlay" onClick={handleClose} >
-          <div className="modal-content" onClick={(e) => e.stopPropagation()} data-aos="zoom-in-down">
+          <div className="modal-content" onClick={(e) => e.stopPropagation()} data-aos="flip-right">
             <button className="modal-close" onClick={handleClose}>X</button>
             <div className="mb-4">
               <label className="block text-gray-700 font-bold mb-2">Full Name</label>
